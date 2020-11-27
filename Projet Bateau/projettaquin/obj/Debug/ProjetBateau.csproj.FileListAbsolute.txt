@@ -1,0 +1,9 @@
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\bin\Debug\projettaquin.exe.config
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\obj\Debug\projettaquin.exe
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\obj\Debug\projettaquin.pdb
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\bin\Debug\projettaquin.exe
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\bin\Debug\projettaquin.pdb
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\obj\Debug\ProjetBateau.csprojResolveAssemblyReference.cache
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\obj\Debug\projettaquin.Form1.resources
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\obj\Debug\projettaquin.Properties.Resources.resources
+C:\Users\cbrissaud\Documents\Repository\Repository\Projet Bateau\projettaquin\obj\Debug\ProjetBateau.csproj.GenerateResource.Cache

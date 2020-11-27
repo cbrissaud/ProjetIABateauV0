@@ -22,8 +22,8 @@ namespace projettaquin
 
         private void CasAButtun_Click(object sender, EventArgs e) //Cas A
         {
-            NodeBateau.cas = 'a'; 
-
+            NodeBateau.cas = 'a';
+            pictureBox1.Refresh();// Actualise la picturebox
             SearchTree g = new SearchTree();
             NodeBateau N0 = new NodeBateau(100,200); //Entre en entrée les coordonnées (x et y) du noeud initial du bateau pour le Cas A
             NodeBateau._xf = 200; // Entre en entrée les coordonnées en abcscisse du noeud final  que le bateau doit atteindre pour le Cas A
@@ -51,21 +51,20 @@ namespace projettaquin
                 string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
-                ChronoBox.Text = "Chronométre : " + elapsedTime;
+                ChronoBox.Text = elapsedTime;
                 
                 
                 int i = 0;
                 Pen penwhite = new Pen(Color.White); //Affichage du segment entre deux points
                 Graphics g1 = pictureBox1.CreateGraphics();
 
-                PasBox.AppendText("Pas : " + NodeBateau.pas.ToString());// Affichage du nombre de pas 
+                PasBox.Text = NodeBateau.pas.ToString();// Affichage du nombre de pas 
 
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
-                    listBox1.Items.Add("G : " + N.GetGCost().ToString()); // Affichage de G : le temps entre le nœud initial et le nœud final 
-
-
+                   
+                    
                     if (i < Lres.Count - 1)
                     {
                         NodeBateau NT = (NodeBateau)(N);
@@ -84,6 +83,7 @@ namespace projettaquin
                         i++;
                     }
                 }
+                textTempsParcours.Text = Lres[Lres.Count - 1].GetGCost().ToString(); // Affichage de G : le temps entre le nœud initial et le nœud final 
                 labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
                 labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
                 g.GetSearchTree(treeView1);
@@ -97,6 +97,7 @@ namespace projettaquin
         private void CasBButton_Click_1(object sender, EventArgs e) // Cas B
         {
             NodeBateau.cas = 'b';
+            pictureBox1.Refresh(); // Actualise la picturebox
             SearchTree g = new SearchTree();
             NodeBateau N0 = new NodeBateau(100, 200); //Entre en entrée les coordonnées(x et y) du noeud initial du bateau pour le Cas B
             NodeBateau._xf = 200; // Entre en entrée les coordonnées en abcscisse du noeud final que le bateau doit atteindre pour le Cas B
@@ -126,19 +127,19 @@ namespace projettaquin
                 string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", 
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
-                ChronoBox.Text = "Chronométre : " + elapsedTime;
+                ChronoBox.Text = elapsedTime;
 
                 int i = 0;
                 Pen penwhite = new Pen(Color.White); ////Affichage du segment entre deux points
                 Graphics g1 = pictureBox1.CreateGraphics();
 
-                PasBox.AppendText("Pas : " + NodeBateau.pas.ToString()); // Affichage du nombre de pas 
+                PasBox.Text = NodeBateau.pas.ToString(); // Affichage du nombre de pas 
 
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
 
-                    listBox1.Items.Add("G : " + N.GetGCost().ToString()); // Affichage de G : le temps entre le nœud initial et le nœud final 
+                  
                     if (i < Lres.Count - 1)
                     {
                         NodeBateau NT = (NodeBateau)(N);
@@ -158,6 +159,7 @@ namespace projettaquin
                     }
 
                 }
+                textTempsParcours.Text = Lres[Lres.Count - 1].GetGCost().ToString();// Affichage de G : le temps entre le nœud initial et le nœud final 
                 labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
                 labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
                 g.GetSearchTree(treeView1);
@@ -168,6 +170,7 @@ namespace projettaquin
         private void button3_Click(object sender, EventArgs e)
         {
             NodeBateau.cas = 'c';
+            pictureBox1.Refresh();// Actualise la picturebox
             SearchTree g = new SearchTree();
             NodeBateau N0 = new NodeBateau(200, 100);//Entre en entrée les coordonnées(x et y) du noeud initial du bateau pour le Cas C
             NodeBateau._xf = 100; // Entre en entrée les coordonnées en abcscisse du noeud final que le bateau doit atteindre pour le Cas C
@@ -197,9 +200,9 @@ namespace projettaquin
                 string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", //Affichage du chronomètre 
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
-                ChronoBox.Text = "Chronométre : " + elapsedTime;
+                ChronoBox.Text = elapsedTime;
 
-                PasBox.AppendText("Pas : " + NodeBateau.pas.ToString()); // Affichage du nombre de pas
+                PasBox.Text = NodeBateau.pas.ToString(); // Affichage du nombre de pas
 
                 int i = 0;
                 Pen penwhite = new Pen(Color.White); 
@@ -207,7 +210,7 @@ namespace projettaquin
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
-                    listBox1.Items.Add("G : " + N.GetGCost().ToString()); // Affichage de G : le temps entre le nœud initial et le nœud final 
+                   
 
                     if (i < Lres.Count-1)
                     {
@@ -227,12 +230,13 @@ namespace projettaquin
                         i++;
                     }
                 }
+                textTempsParcours.Text = Lres[Lres.Count - 1].GetGCost().ToString();// Affichage de G : le temps entre le nœud initial et le nœud final 
                 labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
                 labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
                 g.GetSearchTree(treeView1);
             }
         }
 
-       
+  
     }     
 }
